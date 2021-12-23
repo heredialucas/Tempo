@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Tempo/static/css/main.56ceebcb.css",
+    "main.js": "/Tempo/static/js/main.0da6115d.js",
+    "static/js/787.7ff813f8.chunk.js": "/Tempo/static/js/787.7ff813f8.chunk.js",
+    "index.html": "/Tempo/index.html",
+    "main.56ceebcb.css.map": "/Tempo/static/css/main.56ceebcb.css.map",
+    "main.0da6115d.js.map": "/Tempo/static/js/main.0da6115d.js.map",
+    "787.7ff813f8.chunk.js.map": "/Tempo/static/js/787.7ff813f8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56ceebcb.css",
+    "static/js/main.0da6115d.js"
+  ]
+}
