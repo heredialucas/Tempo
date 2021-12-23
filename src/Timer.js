@@ -16,10 +16,16 @@ const Timer = () => {
   }
 
   function toggle() {
+    if (tipo === "Cuenta Regresiva") {
+      myRef.current.value = 0;
+    }
     setActivo(!activo);
   }
 
   function reset() {
+    if (tipo === "Cuenta Regresiva") {
+      myRef.current.value = 0;
+    }
     setSegundos(0);
     setActivo(false);
   }
@@ -54,32 +60,34 @@ const Timer = () => {
 
   return (
     <div className="app">
-      <div className="time">{segundos}s</div>
-      <div className="row">
-        <button
-          className={`button button-primary button-primary-${
-            activo ? "active" : "inactive"
-          }`}
-          onClick={toggle}
-        >
-          {activo ? "Pausa" : "Inicio"}
+      <div className="app-container">
+        <div className="time">{segundos} s</div>
+        <div className="row">
+          <button
+            className={`button button-primary button-primary-${
+              activo ? "active" : "inactive"
+            }`}
+            onClick={toggle}
+          >
+            {activo ? "Pausa" : "Inicio"}
+          </button>
+          <button className="button" onClick={reset}>
+            Reset
+          </button>
+        </div>
+        <button className="button" onClick={cambioTipo}>
+          {tipo}
         </button>
-        <button className="button" onClick={reset}>
-          Reset
-        </button>
+        {tipo === "Cuenta Regresiva" && (
+          <input
+            type="number"
+            ref={myRef}
+            onChange={agregaSegundos}
+            placeholder="Ingresa Segundos"
+            autoComplete="off"
+          />
+        )}
       </div>
-      <button className="button" onClick={cambioTipo}>
-        {tipo}
-      </button>
-      {tipo === "Cuenta Regresiva" && (
-        <input
-          type="number"
-          ref={myRef}
-          onChange={agregaSegundos}
-          placeholder="Ingresa Segundos"
-          autoComplete="off"
-        />
-      )}
     </div>
   );
 };
